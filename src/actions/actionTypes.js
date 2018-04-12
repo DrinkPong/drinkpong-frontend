@@ -1,7 +1,14 @@
 // admin actions
+export const SET_TARGET_COORDINATES = 'SET_TARGET_COORDINATES';
+export const SET_TARGET_CUP_X = 'SET_TARGET_CUP_X';
+export const SET_TARGET_CUP_Y = 'SET_TARGET_CUP_Y';
+export const SET_LAUNCH_AFTER_TARGET_LOCK = 'SET_LAUNCH_AFTER_TARGET_LOCK';
 export const SET_THETA = 'SET_THETA';
 export const SET_PHI   = 'SET_PHI';
 export const GET_JOKE  = 'GET_JOKE';
+export const SEND_DATA_TO_BOT = "SEND_DATA_TO_BOT";
 
 
 // play actions
+export const DECREASE_CUP_COUNT_HUMAN = 'DECREASE_CUP_COUNT_HUMAN';
+export const DECREASE_CUP_COUNT_BOT = 'DECREASE_CUP_COUNT_BOT';

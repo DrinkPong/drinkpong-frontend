@@ -1,7 +1,10 @@
 import { combineReducers } from 'redux';
-import admin from './adminReducer';
-import play from './playReducer';
 
+// custom reducers - typically I like one per component
+import admin from './admin';
+import play from './play';
+
+// combine reducers from all components
 const rootReducer = combineReducers({
   admin
 });
