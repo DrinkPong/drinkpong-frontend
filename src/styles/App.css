@@ -10,7 +10,7 @@ html {
 body {
   height: 100%;
   background: linear-gradient(180deg, #1f364d, #0e638a);
-  color: #ffffff;
+  color: #ffffff !important;
   font-family: 'Raleway', Arial, sans-serif; }
 
 #titleText {
@@ -928,3 +928,53 @@ footer[_ngcontent-c4] hr[_ngcontent-c4] {
 
 .verified {
   color: #00ffa8; }
+
+.largeFont {
+  font-size: 10rem !important; }
+
+.arrow--HUMAN {
+  animation: leftRightHover 2s linear infinite alternate !important;
+  text-align: center !important; }
+
+.arrow--BOT {
+  animation: leftRightHover 2s linear infinite alternate !important;
+  transform: rotate(180deg) !important;
+  text-align: center !important; }
+
+@keyframes leftRightHover {
+  from {
+    transform: translateX(10%); }
+  to {
+    transform: translateX(0%); } }
+
+.container {
+  margin: auto;
+  width: 80%;
+  background-color: transparent; }
+
+.path {
+  position: relative;
+  overflow: hidden;
+  width: 800px;
+  height: 80px;
+  background-color: #c1c1c1;
+  margin: auto; }
+
+.shape {
+  position: absolute;
+  left: 0;
+  background-color: red;
+  width: 80px;
+  height: 80px;
+  display: block;
+  top: 0;
+  x-transition: all 1s ease-in-out;
+  animation: ani 1.7s infinite; }
+
+@keyframes ani {
+  0% {
+    left: 0; }
+  50% {
+    left: 720px; }
+  100% {
+    left: 0; } }

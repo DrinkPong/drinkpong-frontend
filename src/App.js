@@ -65,7 +65,7 @@ class App extends Component {
           <Link id="noUnderline" key="0" onClick={this.closeMenu} to="/"><h3 id="menu-title" className="request-text-gradient"><span id="titleText">DrinkPong</span></h3></Link>,
           <Link key="1" onClick={this.closeMenu} to="/play"><i className="fa fa-fw fa-hand-paper-o"/><span>Play!</span></Link>,
           <Link key="2" onClick={this.closeMenu} to="/admin"><i className="fa fa-fw fa-book"/><span>Admin</span></Link>,
-          <a key="3" href="https://blog.request.network/request-network-project-update-january-19th-2018-announcing-a-30-million-request-fund-6a6f87d27d43"><i className="fa fa-fw fa-external-link" /><span>An Umma Husla Hackathon Project!</span></a>
+          <a key="3" href="https://uh18.diin.io/"><i className="fa fa-fw fa-external-link" /><span>An Umma Husla Hackathon Project!</span></a>
         ];
     return aItems;
   }

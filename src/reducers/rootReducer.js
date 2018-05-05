@@ -6,7 +6,8 @@ import play from './play';
 
 // combine reducers from all components
 const rootReducer = combineReducers({
-  admin
+  admin,
+  play
 });
 
 export default rootReducer;
