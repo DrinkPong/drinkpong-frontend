@@ -4,7 +4,7 @@ import * as actionTypes from '../actions/actionTypes';
 import { cupMade } from '../reducers/play';
 // import { updateTargetCupX, updateTargetCupY } from '../reducers/admin';
 
-const socket = io('http://localhost:3000'); // make sure it is from where the server is serving
+const socket = io(constants.hostName); // make sure it is from where the server is serving
 
 export default class Client {
   constructor(store) {
@@ -14,8 +14,8 @@ export default class Client {
     this.cupTargetCoordinatesSetEvent = this.cupTargetCoordinatesSetEvent.bind(this);
     this.thetaSetEvent = this.thetaSetEvent.bind(this);
     this.phiSetEvent = this.phiSetEvent.bind(this);
-    
-    
+
+
     // socket events (only 'cupMadeEvent' event right now)
     console.log('linking socket functions...');
     socket.on('initalized', this.initalized);

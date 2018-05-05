@@ -1,5 +1,6 @@
 import initialState from './initialState';
 import * as actionTypes from '../actions/actionTypes';
+import * as constants from '../constants/constants';
 import axios from 'axios';
 
 // event creators
@@ -23,7 +24,7 @@ function callBotServer(oState, sAction) {
     case actionTypes.GET_TARGET_COORDINATES_FROM_CAMERA:
       console.log("getting coords yo");
       sMethod = "post";
-      sUrl = "http://localhost:3000/postCupCoordinatesFromCamera";
+      sUrl = constants.hostName + "postCupCoordinatesFromCamera";
       oData = { bLaunchAfterTargetLock: oState.bLaunchAfterTargetLock }; // getting hte coordinates can also trigger a launch if we so wish
       break;
     case actionTypes.SET_TARGET_COORDINATES:
@@ -32,46 +33,46 @@ function callBotServer(oState, sAction) {
       if (oState.sTargetCupX === "" || oState.sTargetCupY === "") {
         return; // should return a new state with an error message set to true
       }
-      sUrl = "http://localhost:3000/postTargetCupCoordinates";
+      sUrl = constants.hostName + "postTargetCupCoordinates";
       oData = { bLaunchAfterTargetLock: oState.bLaunchAfterTargetLock, fTargetCupX: parseFloat(oState.sTargetCupX), fTargetCupY: parseFloat(oState.sTargetCupY) };
       break;
     case actionTypes.LAUNCH:
       console.log("launching yo");
       sMethod = "post";
-      sUrl = "http://localhost:3000/postLaunch";
+      sUrl = constants.hostName + "postLaunch";
       break;
     case actionTypes.SET_THETA:
       sMethod = "post";
-      sUrl = "http://localhost:3000/postTheta";
+      sUrl = constants.hostName + "postTheta";
       oData = { fTheta: parseFloat(oState.sTheta) };
       break;
     case actionTypes.SET_PHI:
       sMethod = "post";
-      sUrl = "http://localhost:3000/postPhi";
+      sUrl = constants.hostName + "postPhi";
       oData = { fPhi: parseFloat(oState.sPhi) };
       break;
     case actionTypes.GET_JOKE:
       sMethod = "post";
-      sUrl = "http://localhost:3000/postJoke";
+      sUrl = constants.hostName + "postJoke";
       break;
     case actionTypes.GET_CHUCK_NORRIS_JOKE:
       sMethod = "post";
-      sUrl = "http://localhost:3000/postChuckNorrisJoke";
+      sUrl = constants.hostName + "postChuckNorrisJoke";
       break;
     case actionTypes.CUP_MADE:
       sMethod = "post";
       oData = { sPointFor: oState.sPointFor, iCupIndex: oState.iCupIndex }
-      sUrl = "http://localhost:3000/postCupMade";
+      sUrl = constants.hostName + "postCupMade";
       break;
     case actionTypes.SET_MOTOR_SPEED_PERCENT:
       sMethod = "post";
       oData = { sMotorSpeedPercent: oState.sMotorSpeedPercent }
-      sUrl = "http://localhost:3000/postMotorSpeedPercent";
-      break;  
+      sUrl = constants.hostName + "postMotorSpeedPercent";
+      break;
     case actionTypes.STOP_MOTORS:
       sMethod = "post";
-      sUrl = "http://localhost:3000/postStopMotors";
-      break;  
+      sUrl = constants.hostName + "postStopMotors";
+      break;
   }
   axios({method: sMethod, url: sUrl, data: oData})
   .then(function (response) {
